@@ -14,6 +14,6 @@ class TutorialController extends Controller
     {
         $users = User::search($request->q)->paginate(5);
 
-        return view('welcome', compact('users'));
+        return view('welcome', compact('users', 'request'));
     }
 }

@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,22 +13,26 @@
 
 <body>
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Laravel 10 Scout Full Text Search Example With Algolia- Laravelia</div>
-                    <div class="card-body">
+
+                    <div class="card-header">
                         <form action="{{ route('index') }}" method="get">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control mb-3" placeholder="search" name="q">
+                                    {{-- <input type="text" class="form-control mb-3" value="{{ $request }}" placeholder="search" name="q"> --}}
+                                    <input type="text" class="form-control mb-3" value="{{ old('q', $request->input('q')) }}" placeholder="search" name="q">
                                 </div>
                                 <div class="col-md-2">
                                     <input type="submit" class="form-control mb-3" value="Search">
                                 </div>
                             </div>
                         </form>
+                    </div>
+
+                    <div class="card-body">
                         <table style="width: 100%">
                             <thead>
                                 <th>#</th>
