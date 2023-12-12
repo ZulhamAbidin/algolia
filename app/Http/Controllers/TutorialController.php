@@ -12,7 +12,7 @@ class TutorialController extends Controller
 {
     public function index(Request $request)
     {
-        $users = User::search($request->q)->paginate(5);
+        $users = User::search($request->q)->paginate(8);
 
         return view('welcome', compact('users', 'request'));
     }
